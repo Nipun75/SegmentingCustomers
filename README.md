@@ -1,6 +1,6 @@
 # Customer Segmentation Using K-Means
 
-This project segments mall customers using **K-Means clustering** in a standard VS Code/Python project structure.
+This project segments mall customers using **K-Means clustering** in a standard VS Code/Python project structure and provides a **Streamlit web dashboard** for interactive presentation.
 
 ## Dataset
 
@@ -18,6 +18,7 @@ This project segments mall customers using **K-Means clustering** in a standard 
 SegmentingCustomers/
 ├── Mall_Customers.csv
 ├── main.py
+├── app.py
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
@@ -38,7 +39,8 @@ SegmentingCustomers/
 6. K-Means clustering
 7. Cluster visualization
 8. Customer segment profiling
-9. Save clustered customer data
+9. Business insights and recommendations
+10. Export clustered customer data
 
 ### Features used for clustering
 
@@ -65,10 +67,44 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run:
+### Run the Python version
 
 ```bash
 python main.py
 ```
 
-The program displays the EDA graphs, Elbow Method, Silhouette Score, final customer clusters, and segment profile. It also creates `clustered_customers.csv`.
+This runs the complete ML workflow locally and creates `clustered_customers.csv`.
+
+### Run the Streamlit dashboard
+
+```bash
+streamlit run app.py
+```
+
+The dashboard provides:
+
+- Dataset overview and metrics
+- EDA visualizations
+- Elbow Method
+- Silhouette Score
+- Automatic selection of the best K using the highest silhouette score
+- Customer cluster visualization
+- Segment profiles
+- Business recommendations
+- Downloadable clustered customer data
+
+## Deploy the dashboard
+
+The repository is structured so `app.py` can be deployed as the Streamlit app entry point. Connect the GitHub repository to Streamlit Community Cloud and select:
+
+- Repository: `Nipun75/SegmentingCustomers`
+- Branch: `main`
+- Main file: `app.py`
+
+The dependencies are provided in `requirements.txt`.
+
+## Notes
+
+- The model uses standardized Annual Income and Spending Score features.
+- K-Means uses a fixed `random_state=42` for reproducible results.
+- PCA is intentionally not included.
