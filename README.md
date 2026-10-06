@@ -1,7 +1,8 @@
-# Customer Segmentation Using K-Means
+# Customer Segmentation using K-Means
 
-This project segments mall customers using **K-Means clustering** in a standard VS Code/Python project structure and provides a **Streamlit web dashboard** for interactive presentation.
+🚀 **[Live Demo](https://segmentingcustomersgit-r6hb3wwbk9krffturcbcgg.streamlit.app/)**
 
+Customer segmentation project using K-Means clustering...
 ## Dataset
 
 `Mall_Customers.csv` contains 200 customers with:
